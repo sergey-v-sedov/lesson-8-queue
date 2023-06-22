@@ -3,6 +3,15 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+        enum PRIORITY {NORMAL, EMERGENCY}
+
+        PRIORITY priority;
+
+        priority = PRIORITY.NORMAL;
+        priority.compareTo(PRIORITY.EMERGENCY)
+
+        System.out.println(priority.equals(PRIORITY.EMERGENCY));
+
         Queue<Task> queue = new ArrayDeque<>();//new PriorityQueue<>();
         queue.add(new Task(new StringBuffer("Описание 222")));
         queue.add(new Task(new StringBuffer("Описание 333")));
