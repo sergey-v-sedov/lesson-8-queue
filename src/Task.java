@@ -1,12 +1,12 @@
 import java.util.Objects;
 import java.util.Random;
 
-public class Task {
+public class Task implements Comparable<Task>{
     private final Integer id;
     private final StringBuffer description;
 
     public Task(StringBuffer description) {
-        this.id = 1;
+        this.id = (new Random()).nextInt();
         this.description = description;
     }
 
@@ -37,5 +37,10 @@ public class Task {
     @Override
     public int hashCode() {
         return Objects.hash(id, description);
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.description.toString().compareTo(o.description.toString());
     }
 }
